@@ -1,0 +1,64 @@
+
+<body style="background-color: whitesmoke;background-image:url(https://img.wallpapersafari.com/desktop/1600/900/78/33/mi18Yw.jpg); background-repeat:no-repeat;width: 100%; background-size: cover">
+  <div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+      <div class="modal-dialog" >
+
+        <div class="modal-content" style="background-color:rgba(241, 229, 229, 0.972);" >
+            <div class="modal-header text-center">
+
+                <h4 class="modal-title "style="font-family: bold; font-size: xx-large;margin-left: 190px;">Login</h4>
+                <br>
+
+                <div *ngIf="success == true; then SUCC else FAIL"></div>
+                <ng-template #SUCC ><p style="color:green" >{{form.message}}</p>
+                </ng-template>
+                <ng-template #FAIL><h5 style="color:green" >{{form.message}}</h5></ng-template>
+
+            </div>
+
+                <div class="modal-body">
+                    <div class="form-group row"><div class="col-lg-1"></div>
+
+                        <label class="col-lg-3 form-control-label">User ID <span style="color: red;"> * </span> </label>
+                        <div class="col-lg-7">
+                           
+                            <input [(ngModel)]="form.login_id"  name="userId" type="email" 
+                            placeholder="Enter your user name" style="width: 250px;">
+                            <span style="color: red;"> {{inputError.login_id}} </span>
+                        </div>
+                    </div>
+                    <div class="form-group row"><div class="col-lg-1"></div>
+                        <label class="col-lg-3 form-control-label">Password<span style="color: red;"> * </span> </label>
+                        <div class="col-lg-8">
+                           
+                            <input [(ngModel)]="form.password"   name="password" type="password" 
+                            placeholder="Enter your password" style="width: 250px;">
+                           
+                            <span style="color: red;"> {{inputError.password}} </span>
+                        </div>
+                    </div>
+<br>
+                  <div class="container">
+                    <div class="form-group row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-3">
+                            <button (click)="signIn()" class="btn btn-primary form-control">Sign In</button>
+                            </div>
+                            <div class="col-lg-3">
+                            <button (click)="onClick()" class="btn btn-success form-control">Sign Up</button>
+                            </div>
+                    </div>
+                 </div>
+                   <div class="form-group row">
+                    <div class="col-lg-4"></div>   
+                    <a class="button" (click)="onforgetpassword()" style="font-size: 120%">Forget Password</a>
+                   </div>
+                </div>
+    </div>
+
+    </div>
